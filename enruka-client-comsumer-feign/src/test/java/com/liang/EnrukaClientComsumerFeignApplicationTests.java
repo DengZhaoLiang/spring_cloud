@@ -1,10 +1,10 @@
-package com.liang.ribbon;
+package com.liang;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RibbonApplicationTests {
+class EnrukaClientComsumerFeignApplicationTests {
 
     @Test
     void contextLoads() {

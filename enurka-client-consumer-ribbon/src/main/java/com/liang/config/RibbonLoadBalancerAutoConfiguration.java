@@ -2,6 +2,7 @@ package com.liang.config;
 
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -18,9 +19,12 @@ public class RibbonLoadBalancerAutoConfiguration {
     @Autowired(required = false)
     private List<RestTemplate> restTemplates = Collections.emptyList();
 
+    @Autowired
+    private LoadBalancerClient mLoadBalancerClient;
+
     @Bean
     public RibbonLoadBalancedInterceptor ribbonLoadBalancedInterceptor() {
-        return new RibbonLoadBalancedInterceptor();
+        return new RibbonLoadBalancedInterceptor(mLoadBalancerClient);
     }
 
     @Bean

@@ -20,9 +20,6 @@ public class RibbonLoadBalancedInterceptor implements ClientHttpRequestIntercept
     private LoadBalancerClient loadBalancer;
     private LoadBalancerRequestFactory requestFactory;
 
-    public RibbonLoadBalancedInterceptor() {
-    }
-
     public RibbonLoadBalancedInterceptor(LoadBalancerClient loadBalancer, LoadBalancerRequestFactory requestFactory) {
         this.loadBalancer = loadBalancer;
         this.requestFactory = requestFactory;
